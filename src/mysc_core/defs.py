@@ -4,7 +4,7 @@
     ~~~~~~~~~~~~~~~~~~
     
     Log:
-        2026-01-17 0.1.0 Me2sY 创建
+        2026-03-10 1.0.0 Me2sY 分离
 """
 
 __author__ = 'Me2sY'
@@ -19,7 +19,7 @@ import abc
 from dataclasses import dataclass, asdict, fields
 from typing import Optional, Type, Any, get_origin, Union, get_args, Self
 
-from mysc.core.connection import Connection
+from mysc_core.connection import Connection
 
 
 @dataclass

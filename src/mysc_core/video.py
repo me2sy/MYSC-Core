@@ -4,19 +4,11 @@
     ~~~~~~~~~~~~~~~~~~
     
     Log:
-        2026-01-17 2.0.0 Me2sY  重构
-
-        2024-09-23 1.6.0 Me2sY  新增更新 Callback 方法
-
-        2024-09-09 1.5.8 Me2sY  新增raw_stream
-
-        2024-08-28 1.4.0 Me2sY  优化调整功能结构
-
-        2024-08-25 0.1.0 Me2sY  创建，分离Scrcpy.connect，Video独自连接
+        2026-03-10 1.0.0 Me2sY  分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '2.0.0'
+__version__ = '1.0.0'
 
 __all__ = [
     'CameraKwargs', 'VideoKwargs', 'VideoAdapter'
@@ -35,9 +27,9 @@ from loguru import logger
 import numpy as np
 from PIL.Image import Image
 
-from mysc.core.connection import Connection
-from mysc.core.defs import ConnectKwargs, Adapter
-from mysc.utils.vector import Coordinate, Point
+from mysc_core.connection import Connection
+from mysc_core.defs import ConnectKwargs, Adapter
+from mysc_core.utils.vector import Coordinate, Point
 
 
 @dataclass
@@ -357,4 +349,3 @@ if __name__ == '__main__':
 
     time.sleep(2)
     va.disconnect()
-

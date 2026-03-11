@@ -4,31 +4,11 @@
     ~~~~~~~~~~~~~~~~~~
     
     Log:
-        2026-01-18 2.0.0 Me2sY
-            1.重构，分离AudioPlayer/AudioAdapter，移除AudioPlayer
-            2.使用 pyav 解析 opus flac 减少引用
-
-        2024-09-18 1.6.0 Me2sY  适配插件体系，支持输出 last_pcm
-
-        2024-09-09 1.5.8 Me2sY  新增raw_stream
-
-        2024-09-05 1.5.4 Me2sY 优化pyaudio引入，适配termux
-
-        2024-09-04 1.5.3 Me2sY
-            1.新增 Opus解析
-            2.重构类结构
-
-        2024-08-31 1.4.1 Me2sY  修复Linux下缺陷
-
-        2024-08-28 1.4.0 Me2sY  创建，优化 Player/Adapter 结构
-
-        2024-08-25 0.1.0 Me2sY
-            1.从connect中分离，独占连接
-            2.预初始化播放器，降低声音延迟
+        2026-03-10 1.0.0 Me2sY  分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '2.0.0'
+__version__ = '1.0.0'
 
 __all__ = [
     'AudioKwargs', 'AudioAdapter'
@@ -43,8 +23,8 @@ from adbutils import AdbDevice
 import av
 from loguru import logger
 
-from mysc.core.connection import Connection
-from mysc.core.defs import ConnectKwargs, Adapter
+from mysc_core.connection import Connection
+from mysc_core.defs import ConnectKwargs, Adapter
 
 
 @dataclass

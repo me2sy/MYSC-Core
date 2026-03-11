@@ -4,31 +4,11 @@
     ~~~~~~~~~~~~~~~~~~
     
     Log:
-        2026-01-19 2.0.0 Me2sY
-            1. 使用 Json 持久化
-            2. 重构功能
-
-        2024-10-13 1.6.6 Me2sY
-            1. 修复prop解析错误问题
-            2. 降低 UHID 输入版本功能需求至 9
-
-        2024-10-09 1.6.5 Me2sY  适配 MuMu模拟器
-
-        2024.09.18 1.6.0 Me2sY  适配 插件 体系
-
-        2024-09-13 1.5.11 Me2sY 新引入 uiautomator2，在dump/info/screenshot方面使用jsonrpc,速度很快
-
-        2024-09-10 1.5.9 Me2sY  新增文件管理器，支持拷贝、上传、删除等功能
-
-        2024-08-31 1.4.1 Me2sY  改用新KVManager
-
-        2024-08-29 1.4.0 Me2sY  重构，适配 Session 体系
-
-        2024-08-25 0.1.0 Me2sY  重构，拆分VAC至单个连接
+        2026-03-10 1.0.0 Me2sY 分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '2.0.0'
+__version__ = '1.0.0'
 
 __all__ = [
     'JSDeviceInfo',
@@ -42,8 +22,8 @@ from typing import Optional
 from adbutils import AdbDevice, AdbError, adb
 from loguru import logger
 
-from mysc.utils.storage import JSONStorage
-from mysc.utils.vector import Coordinate, EnumDirection
+from mysc_core.utils.storage import JSONStorage
+from mysc_core.utils.vector import Coordinate, EnumDirection
 
 
 @dataclass

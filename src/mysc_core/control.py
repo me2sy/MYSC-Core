@@ -4,29 +4,11 @@
     ~~~~~~~~~~~~~~~~~~
     
     Log:
-        2026-01-19 2.0.0 Me2sY 重构
-
-        2025-04-23 3.2.0 Me2sY
-            1.适配 3.2 增加 vendorId ProductId
-            2.优化逻辑，避免卡线程
-            3. 2025-05-06 增加 ignore_repeat 忽略重复输入，提高控制精确度
-
-        2024-10-27 1.7.0 Me2sY  新增 Gamepad
-
-        2024-09-08 1.5.7 Me2sY  适配 Scrcpy 屏幕坐标
-
-        2024-09-06 1.5.5 Me2sY  增加 PC -> Device 剪贴板功能
-
-        2024-08-29 1.4.0 Me2sY
-            1.优化结构
-            2.增加剪贴板功能
-
-        2024-08-25 1.3.7 Me2sY
-            新增部分方法，支持 ScalePointR 控制
+        2026-01-19 1.0.0 Me2sY  分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '2.0.0'
+__version__ = '1.0.0'
 
 __all__ = [
     'KeyboardWatcher', 'Gamepad',
@@ -43,15 +25,14 @@ from typing import ClassVar, Callable, Optional, Self
 
 from adbutils import AdbDevice, AdbError
 from loguru import logger
-import pyperclip
 
-from mysc.core.connection import Connection
-from mysc.core.defs import ConnectKwargs, Adapter
-from mysc.utils.keys import (
+from mysc_core.connection import Connection
+from mysc_core.defs import ConnectKwargs, Adapter
+from mysc_core.utils.keys import (
     UnifiedKeys, UnifiedKey, KeyMapper, UHID_GAMEPAD_REPORT_DESC, EnumAction, UHID_MOUSE_REPORT_DESC,
     UHID_KEYBOARD_REPORT_DESC
 )
-from mysc.utils.vector import ScalePointR, Coordinate, EnumDirection
+from mysc_core.utils.vector import ScalePointR, Coordinate, EnumDirection
 
 
 class KeyboardWatcher:
@@ -650,6 +631,12 @@ class ControlAdapter(Adapter):
             实现回写功能
         :return:
         """
+        try:
+            import pyperclip
+        except ImportError as e:
+            logger.warning(f"| ! Exception while loading pyperclip! > {e}")
+            return
+
         while self.is_running:
             try:
                 _bs = self.connection.recv(262144)
@@ -807,6 +794,11 @@ class ControlAdapter(Adapter):
         :param paste:
         :return:
         """
+        try:
+            import pyperclip
+        except ImportError:
+            return False
+
         text = pyperclip.paste()
         if text is not None and len(text) > 0:
             self.f_text_paste(text, paste)
@@ -1045,4 +1037,3 @@ if __name__ == '__main__':
 
     while True:
         time.sleep(1)
-

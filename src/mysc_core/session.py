@@ -4,11 +4,11 @@
     ~~~~~~~~~~~~~~~~~~
     
     Log:
-        2026-01-20 0.1.0 Me2sY 创建
+        2026-03-10 1.0.0 Me2sY 分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '0.1.0'
+__version__ = '1.0.0'
 
 __all__ = [
     'Session'
@@ -19,10 +19,10 @@ from typing import Callable, Optional, Self
 from adbutils import AdbDevice
 from loguru import logger
 
-from mysc.core.audio import AudioKwargs, AudioAdapter
-from mysc.core.control import ControlKwargs, ControlAdapter
-from mysc.core.device import MYDevice
-from mysc.core.video import VideoKwargs, VideoAdapter
+from mysc_core.audio import AudioKwargs, AudioAdapter
+from mysc_core.control import ControlKwargs, ControlAdapter
+from mysc_core.device import MYDevice
+from mysc_core.video import VideoKwargs, VideoAdapter
 
 
 class Session:

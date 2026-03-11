@@ -4,29 +4,11 @@
     ~~~~~~~~~~~~~~~~~~
 
     Log:
-        2026-01-18 2.0.0 Me2sY  转为 Dataclass
-
-        2024-10-09 1.6.5 Me2sY  新增转矩形方法
-
-        2024-09-29 1.6.4 Me2sY  新增__abs__方法
-
-        2024-09-27 1.6.3 Me2sY  新增部分方法
-
-        2024-09-26 1.6.2 Me2sY  新增部分方法
-
-        2024-09-23 1.6.0 Me2sY  新增 pixel_n 方法，计算像素点
-
-        2024-09-08 1.5.7 Me2sY  新增 fit_scrcpy_video 方法，适配Scrcpy Control
-
-        2024-09-01 1.4.2 Me2sY  新增 部分方法
-
-        2024-08-25 1.4.0 Me2sY  新增 ScalePointR, 带方向的 ScalePoint
-
-        2024-08-24 1.3.7 Me2sY utils中分离
+        2026-03-10 1.0.0 Me2sY  分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '2.0.0'
+__version__ = '1.0.0'
 
 __all__ = [
     'EnumDirection',

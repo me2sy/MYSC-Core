@@ -5,19 +5,11 @@
     按键定义及转换
 
     Log:
-        2024-10-26 1.7.0 Me2sY
-            1. 新增Gamepad Report desc
-            2. 新增Gamepad 键值
-
-        2024-09-28 1.6.4 Me2sY  新增 Move uk
-
-        2024-09-18 1.6.0 Me2sY  修正 ADB 部分功能键映射
-
-        2024-08-24 1.3.7 Me2sY  从utils中分离，重构结构及功能
+        2026-03-10 1.0.0 Me2sY  分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '1.7.0'
+__version__ = '1.0.0'
 
 __all__ = [
     'EnumAction',

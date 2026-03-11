@@ -4,11 +4,11 @@
     ~~~~~~~~~~~~~~~~~~
     
     Log:
-        2026-01-19 0.1.0 Me2sY 创建，用于持久化运行信息
+        2026-03-10 1.0.0 Me2sY  分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '0.1.0'
+__version__ = '1.0.0'
 
 __all__ = [
     'JSONStorage'
@@ -19,7 +19,7 @@ import json
 import pathlib
 from typing import Self, Optional, ClassVar, Type
 
-from mysc.utils.params import Param
+from mysc_core.utils.params import Param
 
 
 @dataclass

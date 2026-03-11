@@ -4,17 +4,11 @@
     ~~~~~~~~~~~~~~~~~~
     
     Log:
-        2026-01-17 2.0.0 Me2sY 重构，升级为3.3.4
-
-        2024-09-09 1.5.8 Me2sY  新增自动屏蔽方法
-
-        2024-08-28 1.4.0 Me2sY
-            1.创建
-            2.优化server启动逻辑，使用clean降低错误发生，同时不同线程推送不同server文件，确保clean不会误删文件
+        2026-03-10 1.0.0 Me2sY  分离
 """
 
 __author__ = 'Me2sY'
-__version__ = '2.0.0'
+__version__ = '1.0.0'
 
 __all__ = ['Connection']
 
@@ -28,7 +22,7 @@ import adbutils
 from adbutils import AdbDevice, AdbConnection
 from loguru import logger
 
-from mysc.utils.params import Param
+from mysc_core.utils.params import Param
 
 
 class Connection:
@@ -225,8 +219,3 @@ if __name__ == '__main__':
     print(connection.device_name, connection.scid, '已连接')
     print(connection.recv(1024))
     connection.disconnect()
-
-
-
-
-
